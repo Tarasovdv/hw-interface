@@ -1,6 +1,6 @@
 package interface_oop;
 
-public interface Run_Runnable {
+public interface RunRunnable {
     void run();
     int maxRunDistance();
 }

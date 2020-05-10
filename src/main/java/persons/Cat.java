@@ -1,11 +1,11 @@
-package characters;
+package persons;
 
 import interface_oop.Flyable;
-import interface_oop.Run_Runnable;
+import interface_oop.RunRunnable;
 import interface_oop.Swimable;
 import interface_oop.Walkable;
 
-public class Cat implements Walkable, Swimable, Flyable, Run_Runnable {
+public class Cat implements Walkable, Swimable, Flyable, RunRunnable {
 
 
     @Override

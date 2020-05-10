@@ -1,6 +1,6 @@
-import characters.*;
+import persons.*;
 import interface_oop.Flyable;
-import interface_oop.Run_Runnable;
+import interface_oop.RunRunnable;
 import interface_oop.Swimable;
 import interface_oop.Walkable;
 import presentation.Salary;
@@ -19,19 +19,19 @@ public class Polygon {
         while ((inputConsole = console.nextInt()) != 0) {
             switch (inputConsole) {
                 case 1:
-                    bird();
+                    printAbilityBird();
                     break;
                 case 2:
-                    fish();
+                    printAbilityFish();
                     break;
                 case 3:
-                    cat();
+                    printAbilityCat();
                     break;
                 case 4:
-                    dog();
+                    printAbilityDog();
                     break;
                 case 5:
-                    man();
+                    printAbilityMan();
                     break;
                 case 6:
                     presentation();
@@ -61,53 +61,53 @@ public class Polygon {
 
     }
 
-    private static void man() {
+    private static void printAbilityMan() {
         System.out.println("Man");
         printMenuInterfaces();
         interfaces("man");
     }
 
-    private static void dog() {
+    private static void printAbilityDog() {
         System.out.println("Dog");
         printMenuInterfaces();
         interfaces("dog");
     }
 
-    private static void cat() {
+    private static void printAbilityCat() {
         System.out.println("Cat");
         printMenuInterfaces();
         interfaces("cat");
     }
 
-    private static void fish() {
+    private static void printAbilityFish() {
         System.out.println("Fish");
         printMenuInterfaces();
         interfaces("fish");
     }
 
-    public static void bird() {
+    public static void printAbilityBird() {
         System.out.println("Bird");
         printMenuInterfaces();
         interfaces("bird");
 
     }
 
-    public static void interfaces(String character) {
+    public static void interfaces(String persons) {
         Scanner console = new Scanner(System.in);
         int consoleInterfaces;
         while ((consoleInterfaces = console.nextInt()) != 0) {
             switch (consoleInterfaces) {
                 case 1:
-                    swimable(character);
+                    swimable(persons);
                     break;
                 case 2:
-                    flyable(character);
+                    flyable(persons);
                     break;
                 case 3:
-                    walkable(character);
+                    walkable(persons);
                     break;
                 case 4:
-                    runnable(character);
+                    runnable(persons);
 
             }
         }
@@ -115,11 +115,11 @@ public class Polygon {
 
 
     private static void runnable(String character) {
-        Run_Runnable ytka = new Bird();
-        Run_Runnable dori = new Fish();
-        Run_Runnable barsik = new Cat();
-        Run_Runnable tuzik = new Dog();
-        Run_Runnable rich = new Man();
+        RunRunnable ytka = new Bird();
+        RunRunnable dori = new Fish();
+        RunRunnable barsik = new Cat();
+        RunRunnable tuzik = new Dog();
+        RunRunnable rich = new Man();
         if ("bird".equals(character)) {
             ytka.run();
             System.out.println("Max run distance: " + ytka.maxRunDistance() + " meter");
