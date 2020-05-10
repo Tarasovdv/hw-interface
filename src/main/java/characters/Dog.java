@@ -5,17 +5,16 @@ import interface_oop.Run_Runnable;
 import interface_oop.Swimable;
 import interface_oop.Walkable;
 
-public class Man implements Walkable, Swimable, Flyable, Run_Runnable {
-
+public class Dog implements Walkable, Swimable, Flyable, Run_Runnable {
     @Override
     public void fly() {
-        System.out.println("Only on aircraft.");
+        System.out.println("Only to space.");
 
     }
 
     @Override
     public String sing() {
-        String message = "Sing very good.";
+        String message = "Sing wowf.";
         return message;
 
     }
@@ -28,7 +27,7 @@ public class Man implements Walkable, Swimable, Flyable, Run_Runnable {
 
     @Override
     public double maxSwimSpeed() {
-        return 6;
+        return 6.5;
     }
 
     @Override
@@ -45,6 +44,6 @@ public class Man implements Walkable, Swimable, Flyable, Run_Runnable {
 
     @Override
     public int maxRunDistance() {
-        return 150;
+        return 5;
     }
 }
