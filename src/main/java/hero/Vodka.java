@@ -1,4 +1,4 @@
-package persons;
+package hero;
 
 
 public class Vodka {

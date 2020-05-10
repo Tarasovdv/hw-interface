@@ -1,4 +1,4 @@
-package persons;
+package hero;
 
 import interface_oop.Flyable;
 import interface_oop.RunRunnable;

@@ -1,49 +1,50 @@
-package persons;
+package hero;
 
 import interface_oop.Flyable;
 import interface_oop.RunRunnable;
 import interface_oop.Swimable;
 import interface_oop.Walkable;
 
-public class Fish implements Walkable, Swimable, Flyable, RunRunnable {
+public class Man implements Walkable, Swimable, Flyable, RunRunnable {
+
     @Override
     public void fly() {
-        System.out.println("Some are able to fly.");
+        System.out.println("Only on aircraft.");
 
     }
 
     @Override
     public String sing() {
-        String message = "Silent as fish.";
+        String message = "Sing very good.";
         return message;
+
     }
 
     @Override
     public void swim() {
-        System.out.println("This is their main job.");
+        System.out.println("They don't swim well.");
 
     }
 
     @Override
     public double maxSwimSpeed() {
-        return 78;
+        return 6;
     }
 
     @Override
     public void walk() {
-        System.out.println("Not walk.");
+        System.out.println("They love to walk.");
 
     }
 
-
     @Override
     public void run() {
-        System.out.println("Not to run.");
+        System.out.println("They run well.");
 
     }
 
     @Override
     public int maxRunDistance() {
-        return 0;
+        return 150;
     }
 }

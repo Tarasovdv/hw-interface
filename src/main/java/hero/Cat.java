@@ -1,21 +1,22 @@
-package persons;
+package hero;
 
 import interface_oop.Flyable;
 import interface_oop.RunRunnable;
 import interface_oop.Swimable;
 import interface_oop.Walkable;
 
-public class Man implements Walkable, Swimable, Flyable, RunRunnable {
+public class Cat implements Walkable, Swimable, Flyable, RunRunnable {
+
 
     @Override
     public void fly() {
-        System.out.println("Only on aircraft.");
+        System.out.println("Don't fly.");
 
     }
 
     @Override
     public String sing() {
-        String message = "Sing very good.";
+        String message = "Sing meow.";
         return message;
 
     }
@@ -28,7 +29,7 @@ public class Man implements Walkable, Swimable, Flyable, RunRunnable {
 
     @Override
     public double maxSwimSpeed() {
-        return 6;
+        return 5.5;
     }
 
     @Override
@@ -45,6 +46,6 @@ public class Man implements Walkable, Swimable, Flyable, RunRunnable {
 
     @Override
     public int maxRunDistance() {
-        return 150;
+        return 2;
     }
 }

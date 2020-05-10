@@ -1,4 +1,4 @@
-import persons.*;
+import hero.*;
 import interface_oop.Flyable;
 import interface_oop.RunRunnable;
 import interface_oop.Swimable;
@@ -92,50 +92,50 @@ public class Polygon {
 
     }
 
-    public static void interfaces(String persons) {
+    public static void interfaces(String hero) {
         Scanner console = new Scanner(System.in);
         int consoleInterfaces;
         while ((consoleInterfaces = console.nextInt()) != 0) {
             switch (consoleInterfaces) {
                 case 1:
-                    swimable(persons);
+                    swimable(hero);
                     break;
                 case 2:
-                    flyable(persons);
+                    flyable(hero);
                     break;
                 case 3:
-                    walkable(persons);
+                    walkable(hero);
                     break;
                 case 4:
-                    runnable(persons);
+                    runnable(hero);
 
             }
         }
     }
 
 
-    private static void runnable(String persons) {
+    private static void runnable(String hero) {
         RunRunnable ytka = new Bird();
         RunRunnable dori = new Fish();
         RunRunnable barsik = new Cat();
         RunRunnable tuzik = new Dog();
         RunRunnable rich = new Man();
-        if ("bird".equals(persons)) {
+        if ("bird".equals(hero)) {
             ytka.run();
             System.out.println("Max run distance: " + ytka.maxRunDistance() + " meter");
-        } else if ("cat".equals(persons)) {
+        } else if ("cat".equals(hero)) {
             barsik.run();
             System.out.println("Max run distance: " + barsik.maxRunDistance() + " kilometer");
 
-        } else if ("fish".equals(persons)) {
+        } else if ("fish".equals(hero)) {
             dori.run();
             System.out.println("Max run distance: " + dori.maxRunDistance() + " meter");
 
-        } else if ("dog".equals(persons)) {
+        } else if ("dog".equals(hero)) {
             tuzik.run();
             System.out.println("Max run distance: " + tuzik.maxRunDistance() + " kilometer");
 
-        } else if ("man".equals(persons)) {
+        } else if ("man".equals(hero)) {
             rich.run();
             System.out.println("Max run distance: " + rich.maxRunDistance() + " kilometer");
 
@@ -143,47 +143,47 @@ public class Polygon {
 
     }
 
-    private static void walkable(String persons) {
+    private static void walkable(String hero) {
         Walkable ytka = new Bird();
         Walkable dori = new Fish();
         Walkable barsik = new Cat();
         Walkable tuzic = new Dog();
         Walkable rich = new Man();
-        if ("bird".equals(persons)) {
+        if ("bird".equals(hero)) {
             ytka.walk();
-        } else if ("cat".equals(persons)) {
+        } else if ("cat".equals(hero)) {
             barsik.walk();
-        } else if ("fish".equals(persons)) {
+        } else if ("fish".equals(hero)) {
             dori.walk();
-        } else if ("dog".equals(persons)) {
+        } else if ("dog".equals(hero)) {
             tuzic.walk();
-        } else if ("man".equals(persons)) {
+        } else if ("man".equals(hero)) {
             rich.walk();
         }
     }
 
-    private static void flyable(String persons) {
+    private static void flyable(String hero) {
         Flyable ytka = new Bird();
         Flyable dori = new Fish();
         Flyable barsik = new Cat();
         Flyable tuzic = new Dog();
         Flyable rich = new Man();
-        if ("bird".equals(persons)) {
+        if ("bird".equals(hero)) {
             ytka.fly();
             System.out.println(ytka.sing());
-        } else if ("cat".equals(persons)) {
+        } else if ("cat".equals(hero)) {
             barsik.fly();
             System.out.println(barsik.sing());
 
-        } else if ("fish".equals(persons)) {
+        } else if ("fish".equals(hero)) {
             dori.fly();
             System.out.println(dori.sing());
 
-        } else if ("dog".equals(persons)) {
+        } else if ("dog".equals(hero)) {
             tuzic.fly();
             System.out.println(tuzic.sing());
 
-        } else if ("man".equals(persons)) {
+        } else if ("man".equals(hero)) {
             rich.fly();
             System.out.println(rich.sing());
 
@@ -191,25 +191,25 @@ public class Polygon {
 
     }
 
-    private static void swimable(String persons) {
+    private static void swimable(String hero) {
         Swimable ytka = new Bird();
         Swimable barsik = new Cat();
         Swimable dori = new Fish();
         Swimable tuzic = new Dog();
         Swimable rich = new Man();
-        if ("bird".equals(persons)) {
+        if ("bird".equals(hero)) {
             ytka.swim();
             System.out.println("Max swim Speed: " + ytka.maxSwimSpeed() + " km/h");
-        } else if ("cat".equals(persons)) {
+        } else if ("cat".equals(hero)) {
             barsik.swim();
             System.out.println("Max swim Speed: " + barsik.maxSwimSpeed() + " km/h");
-        } else if ("fish".equals(persons)) {
+        } else if ("fish".equals(hero)) {
             dori.swim();
             System.out.println("Max swim Speed: " + dori.maxSwimSpeed() + " km/h");
-        } else if ("dog".equals(persons)) {
+        } else if ("dog".equals(hero)) {
             tuzic.swim();
             System.out.println("Max swim Speed: " + tuzic.maxSwimSpeed() + " km/h");
-        } else if ("man".equals(persons)) {
+        } else if ("man".equals(hero)) {
             rich.swim();
             System.out.println("Max swim Speed: " + rich.maxSwimSpeed() + " km/h");
         }
