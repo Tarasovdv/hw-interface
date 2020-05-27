@@ -25,27 +25,22 @@ public class Main {
 //        System.out.println(name);
 
         //printList(persons);
+        int sum = 0;
+        int contain = 0;
         for (Person o : persons) {
             boolean fit = o.getAge() < 27 && o.getAge() > 17;
             boolean men = o.getSex().contains("male");
             boolean name = o.getName().matches("[N].*");
-            int middleAge;
+            boolean woman = o.getSex().contains("female");
             if (fit && men && name) {
                 System.out.println(o);
-            }
-        }
-
-        double average = 0;
-
-        int sum = 0;
-        int contain = 0;
-        for (Person o : persons) {
-            boolean woman = o.getSex().contains("female");
-            if (woman) {
+            }else if (woman){
                 sum += o.getAge();
                 contain++;
+
             }
         }
+
         System.out.println("Middle age woman: " + sum / contain);
 
 
