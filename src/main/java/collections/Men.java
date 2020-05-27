@@ -1,5 +1,9 @@
 package collections;
 
+import lombok.Getter;
+
+@Getter
+
 public class Men extends Person{
 
     public Men(String name, int age, String sex) {
@@ -10,5 +14,6 @@ public class Men extends Person{
     public String toString() {
         return super.toString();
     }
+
 
 }
