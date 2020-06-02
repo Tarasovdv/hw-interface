@@ -11,7 +11,6 @@ public class MyArrayList {
         size = 0;
     }
 
-
     public MyArrayList subList(int start, int finish) {
         checkIndex(start);
         checkIndex(finish);
@@ -22,21 +21,17 @@ public class MyArrayList {
         return arrayList;
     }
 
-
     public int size() {
-
         return size;
     }
 
     public boolean isEmpty() {
-
         return size == 0;
     }
 
-
     public boolean contains(Object o) {
         for (Object value : array) {
-            if (value.equals(o)) {
+            if (o.equals(value)) {
                 return true;
             }
         }
@@ -54,34 +49,22 @@ public class MyArrayList {
         return true;
     }
 
-    public void remove(Object o) {
-        Object[] resArray = new Object[array.length - 1];
-        int index;
-        for (index = 0; index < array.length; index++) {//нахождение индекса элемента
-            if (array[index].equals(o)) {
+    public Object remove(Object o) {
+        for (int i = 0; i <array.length ; i++) {
+            if (array[i].equals(o)){
+                System.arraycopy(array, i + 1, array, i, size - 1 - i);
                 break;
-            } else if ((index == array.length - 1)) { //не позволяет выйти за границы массива, если эл-т не найден в массиве
-                System.out.println("Элемент не найден");
-            } else {
-                resArray[index] = array[index]; //присваиваем элемент в новый массив согласно цикла, если искомый объект еще не найден
             }
         }
-
-        //присваиваем оставшиеся элементы исключая выбранный.
-        if (resArray.length - index >= 0) {
-            System.arraycopy(array, index + 1, resArray, index, resArray.length - index);
-            array = resArray;
-        }
-
-
+        array[--size] = null;
+        return array;
     }
 
-
     public void clear() {
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i <array.length ; i++) {
             array[i] = null;
-            size = 0;
         }
+        size = 0;
     }
 
     public Object get(int i) {
@@ -94,11 +77,9 @@ public class MyArrayList {
             System.err.println("Введите корректный индекс, меньше " + size);
             throw new ArrayIndexOutOfBoundsException(index);
         }
-
     }
 
-
-    public void set (int i, Object o) {
+    public void set(int i, Object o) {
         checkIndex(i);
         array[i] = o;
     }
@@ -106,40 +87,41 @@ public class MyArrayList {
     public void add(int index, Object o) {
         checkIndex(index);
         if (size >= array.length) {
+            size++;
             Object[] resArray = new Object[3 * 2 * size + 1];
-            System.arraycopy(array, index, resArray, index + 1, size-index );
+            System.arraycopy(array, 0, resArray, 0, index);
+            System.arraycopy(array, index, resArray, index + 1, size - index);
             array = resArray;
+            array[index] = o;
         }
+            size++;
+        System.arraycopy(array, index, array, index + 1, size - index);
         array[index] = o;
-        //size++;
 
     }
 
     public Object remove(int index) {
 
-        System.arraycopy(array, index + 1, array, index, size -1 - index);
+        System.arraycopy(array, index + 1, array, index, size - 1 - index);
+        array[--size] = null;
 
         return array;
     }
 
     public int indexOf(Object o) {
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < size; i++) {
             if (array[i].equals(o)) {
                 return i;
-
             }
-
         }
         return 0;
     }
 
     public int lastIndexOf(Object o) {
-        for (int i = array.length - 1; i >= 0; i--) {
+        for (int i = size-1; i >= 0; i--) {
             if (array[i].equals(o)) {
                 return i;
-
             }
-
         }
         return 0;
     }
@@ -153,8 +135,5 @@ public class MyArrayList {
         sb.append('}');
 
         return sb.toString();
-
     }
-
-
 }
