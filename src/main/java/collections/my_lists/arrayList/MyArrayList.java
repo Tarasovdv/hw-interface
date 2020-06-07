@@ -1,4 +1,4 @@
-package collections.my_lists;
+package collections.my_lists.arrayList;
 
 
 public class MyArrayList {
@@ -50,8 +50,8 @@ public class MyArrayList {
     }
 
     public Object remove(Object o) {
-        for (int i = 0; i <array.length ; i++) {
-            if (array[i].equals(o)){
+        for (int i = 0; i < size; i++) {
+            if (array[i].equals(o)) {
                 System.arraycopy(array, i + 1, array, i, size - 1 - i);
                 break;
             }
@@ -61,7 +61,7 @@ public class MyArrayList {
     }
 
     public void clear() {
-        for (int i = 0; i <array.length ; i++) {
+        for (int i = 0; i < size; i++) {
             array[i] = null;
         }
         size = 0;
@@ -94,17 +94,15 @@ public class MyArrayList {
             array = resArray;
             array[index] = o;
         }
-            size++;
+        size++;
         System.arraycopy(array, index, array, index + 1, size - index);
         array[index] = o;
-
     }
 
     public Object remove(int index) {
-
+        checkIndex(index);
         System.arraycopy(array, index + 1, array, index, size - 1 - index);
         array[--size] = null;
-
         return array;
     }
 
@@ -118,7 +116,7 @@ public class MyArrayList {
     }
 
     public int lastIndexOf(Object o) {
-        for (int i = size-1; i >= 0; i--) {
+        for (int i = size - 1; i >= 0; i--) {
             if (array[i].equals(o)) {
                 return i;
             }
@@ -133,7 +131,6 @@ public class MyArrayList {
             sb.append(array[i].toString()).append(' ');
         }
         sb.append('}');
-
         return sb.toString();
     }
 }

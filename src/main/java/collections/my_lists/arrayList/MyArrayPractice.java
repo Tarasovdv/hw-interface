@@ -1,6 +1,6 @@
-package collections.my_lists;
+package collections.my_lists.arrayList;
 
-import java.util.Arrays;
+import collections.my_lists.arrayList.MyArrayList;
 
 public class MyArrayPractice {
     public static void main(String[] args) {
