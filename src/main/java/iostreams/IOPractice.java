@@ -36,6 +36,8 @@ public class IOPractice {
 //            e.printStackTrace();
 //        }
 
+
+        //запись в файл
 //        File file = new File("src/main/resources/file.txt");
 //
 //        try (PrintWriter printWriter = new PrintWriter(file)) {
@@ -48,6 +50,8 @@ public class IOPractice {
 //            e.printStackTrace();
 //        }
 //
+
+        //чтение из файла
 //        try(BufferedReader fileReader = new BufferedReader(new FileReader(file))) {
 ////            System.out.println(fileReader.readLine());
 //
@@ -60,6 +64,7 @@ public class IOPractice {
 //        }
 
 
+            // задача:вводить до тех пор пока не введешь определенное слово
 //        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 //        try {
 //            String input;
@@ -71,11 +76,14 @@ public class IOPractice {
 //            e.printStackTrace();
 //        }
 
+
+
 //        Men men = new Men("Vit", 18, "male");
 //
 //        try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(
 //        new FileOutputStream("src/main/resources/man.out"))) {
 //            objectOutputStream.writeObject(men);
+//            objectOutputStream.flush();
 //
 //        } catch (IOException e) {
 //            e.printStackTrace();
